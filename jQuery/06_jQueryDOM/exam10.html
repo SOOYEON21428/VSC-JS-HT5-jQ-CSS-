@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
+</head>
+<body>
+    <h1 class="title">동적 드롭다운</h1>
+    <div  class="exec">
+        <form>
+            <span id="category1"></span>
+            <span id="category2"></span>
+            <span id="category3"></span>
+
+        </form>
+    </div>
+
+    <div class="console"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+
+
+            //1 depth
+            $('#category1').load('../text/category-data.html #category1-1', function(){
+                $(this).show();
+            });
+            //2depth
+            $('document').on('change', '#category1 > select', function(){
+                    $('#category2').empty().hide();
+                    $('#category3').empty().hide();
+
+
+
+                var target = $(this).find('option:selected').attr('data-target')
+                console.log('target = ' + target); 
+
+                $('#category2').load('../text/category-data.html' + target, function(){
+                    $(this).show();
+                });
+            });
+            //3depth
+            $('document').on('change', '#category2 > select', function(){
+                var target = $(this).find('option:selected').attr('data-target')
+                console.log('target = ' + target); 
+
+                $('#category3').load('../text/category-data.html' + target, function(){
+                    $(this).show();
+            });
+
+        });
+
+        $(document).on('change', '#category3 > select', function(){
+            if($(this).find('option:selected').index() > 0){
+                var data1 = $('#category1').find('option:selected').val();
+                var data1 = $('#category2').find('option:selected').val();
+                var data1 = $('#category3').find('option:selected').val();
+
+                $('.console').html(data1 + ' &gt; ' + data2 + ' &gt; ' + data3)
+
+            }
+        });
+    });
+    </script>
+</body>
+</html>
