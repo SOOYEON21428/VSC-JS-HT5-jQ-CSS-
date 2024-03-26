@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/event.css">
 </head>
 <body>
-    <h1>Key 이벤트로 확인하기</h1>
+    <h1>Key 이벤트 확인하기</h1>
     <div id="input">
-        <input type="text" />
+        <input type="text"/>
     </div>
     <h2>결과</h2>
     <div id="result"></div>
@@ -19,16 +20,17 @@
             var down_count = 0;
             var up_count = 0;
 
-            if($('#input > input[type="text"]').keydown(function(){
+            $('#input > input[type="text"]').keydown(function(){
                 down_count++;
-                $("#result").html("down_count: " + down_count + "/ up_count :" + up_count);
-            }));
+                $("#result").html("down_count:" + down_count + " / up_count: " + up_count);
+            });
 
-            if($('#input > input[type="text"]').keyup(function(){
+            $('#input > input[type="text"]').keyup(function(){
                 up_count++;
-                $("#result").html("down_count: " + down_count + "/ up_count :" + up_count);
-            }));
+                $("#result").html("down_count:" + down_count + " / up_count: " + up_count);
+            });
         });
     </script>
+
 </body>
 </html>

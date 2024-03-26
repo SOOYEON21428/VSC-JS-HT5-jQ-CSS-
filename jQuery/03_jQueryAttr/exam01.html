@@ -7,32 +7,44 @@
 </head>
 <body>
     <p><a href="#">Link</a></p>
+
     <input type="checkbox" name="" id="check" checked="checked">체크박스
 
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script>
         $(function(){
-            console.log('attr = ' + $('a').attr('href'));
-            console.log('prop = ' + $('a').prop('href'));
+            console.log('attr = ' + $('a').attr('href'));//#
+            console.log('prop = ' + $('a').prop('href'));//http://localhost:8081/workspace/jQuery/03_jQueryAttr/exam01.html#
 
             var check = $('#check');
-            console.log('check = ' + check);
-            console.log('check = ' + check.prop('tagName'));
-            console.log('attr = ' + check.attr('checked'));
-            console.log('prop = ' + check.prop('checked'));
+            console.log('check = ' + check);//[object Object]
+            console.log('check = ' + check.prop('tagName')); //INPUT
+            console.log('attr = ' + check.attr('checked')); //checked
+            console.log('prop = ' + check.prop('checked')); // true
 
-            //var check2 = document.querySelector('#check');
-            //console.log('attr = ' + check2.getAttribute('checked')); -- 이게 열 21행 이다.
+            var check2 = document.querySelector('#check');
+            console.log('attr = ' + check2.getAttribute('checked'));  
+            
+            // .hasAttribute(name) - > 속성의 존재 확인
+            // .getAttribute(name) - 속성값을 가져온다
+            // .setAttribute(name,value)- 속성값을 변경
+            // .removeAttribute(name) --속성값을제거
 
 
 
         });
-        </script>
+
+    </script>
+    
 </body>
 </html>
 
-<!--
-1. attr()/prop()
+<!-- 
+attr() / prop()
+jQuery 1.6버전 이전에는 attr() 만으로 가능하던 처리를 1.6 업데이트로 attr()과 prop() 으로 나뉘어졌다.
+이전에는 attr() 하나로 많은 것을 처리하려다 보니 버그 및 문제가 발생하여 업데이트를 통해 불완전을 해소했다고 한다.
+
+1. attr()
 - HTML에 작성된 속성값을 문자열로 받아온다
 
 [형식]

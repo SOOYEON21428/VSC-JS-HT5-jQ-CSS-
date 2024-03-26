@@ -10,16 +10,20 @@
     <form name="form1">
         <div id="input">
             <h2>저장되었습니다.</h2>
-            <input type="button" id="backBtn" value="이전페이지로 이동" class="myButton" />
+            <input type="button" id="backBtn" value="이전페이지로 이동" class="myButton">
         </div>
     </form>
+
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script>
         $(function(){
             $('.myButton').click(function(){
-                location.href='exam10.html';
-            })
+                history.go(-1);
+                //history.back();
+            });
         });
-        </script>
+
+    </script>
+
 </body>
 </html>
