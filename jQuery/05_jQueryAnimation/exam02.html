@@ -9,45 +9,43 @@
             background: cyan;
         }
 
-        .btn-gray {
-            background: gray;
+        .default {
+            background: initial;
         }
     </style>
 </head>
 <body>
     <h1>show/hide</h1>
     <div id="sh">
-        <input type="button" class="btn btn-gray" value="보이기" />
-        <input type="button" class="btn-gray" value="숨기기" />
-        <input type="button" class="btn-gray" value="토글" />
+        <input type="button" class="btn" value="보이기">
+        <input type="button" value="숨기기">
+        <input type="button" value="토글">
         <div>
-            <img src="../image/1.jpg" width="500px" height="300px" />
+            <img src="../image/1.jpg" width="500px" height="300px">
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         $(function(){
+           
+            $('#sh>input:eq(0)').click(function(){
+                $('#sh img').show(200);
+            });
+            $('#sh>input:eq(1)').click(function(){
+                $('#sh img').hide(200);
+            });
+            $('#sh>input:eq(2)').click(function(){
+                $('#sh img').toggle(200);
+            });
             $('#sh > input').click(function(){
-                // 모든 버튼을 회색으로 설정
-                $('#sh > input').removeClass('btn').addClass('btn-gray');
+                //클릭한 버튼을 제외한 모든 버튼에서 class="btn" 속성을 제거
+                $('#sh >input').not(this).removeClass('btn');
 
-                // 클릭된 버튼의 클래스를 btn으로 변경
-                $(this).removeClass('btn-gray').addClass('btn');
-
-                // 각 버튼에 대한 기능 수행
-                if ($(this).val() === '보이기') {
-                    $('#sh img').show(200);
-                } else if ($(this).val() === '숨기기') {
-                    $('#sh img').hide(200);
-                } else if ($(this).val() === '토글') {
-                    $('#sh img').toggle(200);
-                }
+                //클릭한 버튼에 class="btn" 속성 부여
+                $(this).addClass('btn');
             });
         });
-    </script>
+    </script>   
 </body>
 </html>
-
-
-<!--클릭할때마다 버튼의 색깔을 cyan 으로 바꾸고 나머지는 원래의 색인 회색으로 바뀌게 한다.-->

@@ -6,18 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1 id ="hello"></h1>
-
-    <!--<script src="./jquery.js"></script>-->
+    <h1 id="hello"></h1>
+    
+    <!-- <script src="../jquery-3.7.1.min.js"></script> -->
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script>
-        function hello() {
+        function hello(){
             var h1 = document.getElementById('hello')
             alert(h1.tagName)
 
             h1.innerHTML = 'Hello jQuery';
         }
+
+        //Java Script
+        /*window.onload = function(){
+            hello();
+        }
+        */
+
+        //JavaScript의 onload 이벤트와 같은 효과
         jQuery(hello);
     </script>
 </body>
@@ -64,5 +71,3 @@ CDN(Contents Delivery Network) 이란?
 - 느린 응답속도 / 다운로딩 타임 을 극복하기 위한 기술
 
 -->
-<!--jQuery
-jQuery: The Write Less, Do More, JavaScript Library-->

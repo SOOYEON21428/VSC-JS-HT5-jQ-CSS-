@@ -13,13 +13,15 @@
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script>
         $(function(){
-            var index = 1;
+            var index =1;
 
             $('img').click(function(){
-                 index = (index % 4) + 1;//index를 4로 나눈 나머지
-                 $(this).attr('src', '../image/' + index + '.jpg');//나머지가 image의 파일명에 해당하는 사진으로 출력
+                index = (index % 4) + 1;
+                $(this).attr('src','../image/' + index + '.jpg'); 
+
             });
         });
-    </script>    
+
+    </script>
 </body>
 </html>

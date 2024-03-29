@@ -8,20 +8,19 @@
 <body>
     <h1 id="hello"></h1>
 
-
-    <script src="./jquery.js"></script>
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script>
-        function hello($) {
-            var h1 = $('#hello')//var h1 = document.getElementById('hello')
-            h1.html = ('Hello jQuery')
-            h1.text = ('Hello jQuery')
-        }
+          function hello($){
+            var h1 = $('#hello') //var h1 = document.getElementById('hello')
 
-        jQuery(hello);
+            
+            h1.html('Hello jQuery')//h1.innerHTML = 'Hello jQuery';
+            h1.text('Hello jQuery')//h1.innerText = 'Hello jQuery';
+            
+          }
 
+          jQuery(hello); // 호출
     </script>
-
-
 </body>
 </html>
 

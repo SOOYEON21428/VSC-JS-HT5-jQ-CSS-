@@ -8,19 +8,24 @@
 <body>
     <h1>활성/비활성 구현하기</h1>
     <form name="form1">
-        <input type="checkbox" id="upload_file_check" value="Y" />
-        <input type="file" id="file_finder" disabled/>
+        <input type="checkbox" id="upload_file_check" value="Y">
+        <input type="file" id="file_finder" disabled>
 
-        <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
-        <script>
-            $(function(){
-                $('upload_file_check').change(function(){
-                    var is_check = $(this).is(':checked');
-
-                    $('#file_finder').prop('disabled', !is_check)
-                });
-            });
-            </script>
     </form>
+    
+
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('#upload_file_check').change(function(){
+               var is_check = $(this).is(':checked');
+
+               $('#file_finder').prop('disabled',!is_check);
+                
+            });
+        });
+     </script>   
 </body>
+
 </html>

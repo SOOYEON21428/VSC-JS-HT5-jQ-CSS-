@@ -6,11 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <table border="1">
+        <tr>
+            <td>1번</td>
+            <td>2번</td>
+            <td>3번</td>
+        </tr>
+        <tr>
+            <td>4번</td>
+            <td>5번</td>
+            <td>6번</td>
+            
+        </tr>
+        <tr>
+            <td>7번</td>
+            <td>8번</td>
+            <td>9번</td>
+        </tr>
+    </table>
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+             $('td:eq(4)').css('background','#ff0000');
+            $('td').eq(4).css('background','#ff0000');//위아래 같은말
+
+            $('td:eq(4)').next().css('background','#00ff00');
+            $('td:eq(4)').prev().css('background','#0000ff');
+
+            $('td:eq(4)').parent().css('color','#ffffff');
+            $('td:eq(4)').parent().next().css('color','#ff0000');
+            $('td:eq(4)').parent().prev().css('color','#0000ff');
+            $('td:eq(4)').parent().next().children().css('text-decoration','underline');
+            $('td:eq(4)').parent().next().children().eq(1).css('font-weight','bold');
+
+
+    	});
+    </script>
 </body>
 </html>
-
-
 <!-- 
 요소의 탐색과 생성
 - jQuery는 특정 HTML 요소에 대한 객체를 기준으로 그 주변 요소나 태그의 트리 구조를 탐색할 수 있다.

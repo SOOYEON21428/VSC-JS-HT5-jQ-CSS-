@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../css/event.css">
 </head>
 <body>
-    <h1>Key 이벤트로 확인하기</h1>
-    <div id="input">
-        <input type="text" />
+    <h1>Key 이벤트 확인하기</h1>
+    <div id ="input" >
+        <input type="text"/>
     </div>
     <h2>결과</h2>
     <div id="result"></div>
@@ -18,14 +18,16 @@
     <script>
         $(function(){
             var count = 0;
-            $('#input > input[type="text"]').keypress(function(e){});
+            $('#input > input[type="text"]').keypress(function(e){
             count++;
-            $('#result').html('key count : ' + count + '개 &gt;&gt;' + e.which);
+            $('#result').html('key count : ' + count + '개 &gt;&gt; ' + e.which);
         });
+        });
+
     </script>
 </body>
 </html>
 
 <!--
-    keypress = 대소문자 구별. (Ctrl, shift,alt 구별 x)
+    .keypress = > 대소문자 구별 (Ctrl, Shift, Alt구별x )
 -->

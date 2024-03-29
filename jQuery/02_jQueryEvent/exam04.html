@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/event.css">
 </head>
 <body>
     <h1>Hover 이벤트 확인하기</h1>
-    <div id="imput">
+    <div id="input">
         Mouse Over or Out
     </div>
     <h2>결과</h2>
@@ -17,13 +18,11 @@
     <script>
         $(function(){
             $('#input').hover(function(){
-               $('#result').html('Mouse Enter Event (onMouseOver)')
+                $('#result').html('Mouse Enter Event(onMouseOver)')
             }, function(){
-                $('#result').html('Mouse Leave Event(onMouseOut)')
+                $('#result').html('Mouse Leave Event (onMouseOut)')
             });
         });
-     </script>
-
-
+    </script>
 </body>
 </html>
